@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+    <hibernate-configuration>
+    <session-factory>
+        <!-- JDBC Database connection settings -->
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/mydb</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">HoneyPinky@123</property>
+
+        <!-- Specify dialect -->
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Echo all executed SQL statements to stdout -->
+        <property name="show_sql">true</property>
+
+
+        <!-- Mention annotated class -->
+        <!--  <mapping resource="domain/Message.hbm.xml"/> -->
+        <!-- <mapping resource="domain/Book.hbm.xml"/> -->
+       <mapping class="entity.Book"/> 
+       <!--  <mapping class="entity.Employee"/> -->
+       <!--  <mapping class="entity.Project"/> -->
+
+    </session-factory>
+</hibernate-configuration>
